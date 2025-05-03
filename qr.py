@@ -1,8 +1,17 @@
-from modulefinder import Module
 import qrcode
-data=input('Enter the text or url:').strip()
-filename=input('enter the filename:').strip()
-qr=qrcode(data)
-image=qr.make_image(file_color='black', black_color='white')
-image.save(filename)
-print('qr code saved as {filename}')
+
+data = input("Enter the text or url: ")
+filename = input("Enter the filename: ")
+
+qr = qrcode.QRCode(
+    version=1,
+    box_size=10,
+    border=5
+)
+
+qr.add_data(data)
+qr.make(fit=True)
+
+img = qr.make_image(fill='black', back_color='white')
+img.save(f"{filename}.png")
+
