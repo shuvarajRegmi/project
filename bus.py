@@ -19,4 +19,12 @@ class bus_company():
     def  __init__(self):
         self.buses={}
         
+    def install_bus(self,bus):
+        print("Name:{bus.bus_name} and coach No: {bus.coach_no} is installed sucessfully")
+        self.buses[bus.coach_no]=bus
+    
+    def display_available_buses(self):
+        
+        
+        
         
